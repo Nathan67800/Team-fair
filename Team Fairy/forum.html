@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Team Fairy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="3Dlogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="forum.css">
+    <link rel="stylesheet" href="forum.php">
+</head>
+<body>
+    <header>
+        <h1>Forum</h1>
+    </header>
+    <section id="forumSection">
+        <!-- Messages will be dynamically added here -->
+    </section>
+    <form id="postForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="postContent">Post:</label>
+        <textarea id="postContent" name="postContent" rows="4" required></textarea>
+        <br>
+        <input type="submit" value="Submit Post">
+    </form>
+
+    <script>
+        // JavaScript code for handling dynamic content
+        document.getElementById('postForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            submitPost();
+        });
+
+        function submitPost() {
+            var username = document.getElementById('username').value;
+            var postContent = document.getElementById('postContent').value;
+
+            // Basic validation
+            if (!username || !postContent) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Simulate adding a new post to the page
+            var newPost = '<article><h2>Message</h2><p>' + postContent + '</p><p>Posted by: ' + username + ' | Date: ' + getCurrentDate() + '</p></article>';
+            document.getElementById('forumSection').insertAdjacentHTML('beforeend', newPost);
+
+            // Clear form fields
+            document.getElementById('username').value = '';
+            document.getElementById('postContent').value = '';
+        }
+
+        function getCurrentDate() {
+            var currentDate = new Date();
+            return currentDate.toDateString();
+        }
+    </script>
+</body>
+</html>

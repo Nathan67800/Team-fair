@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    font-family: "Libre Baskerville", serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+        background-color: #0c0f15;
+        overflow-x:hidden;
+        color: skyblue; 
+}
+header {
+    background-color: #333;
+    color: skyblue;
+    padding: 10px;
+    text-align: center;
+}
+section {
+    margin-top: 20px;
+}
+article {
+    border: 1px solid skyblue;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+form {
+    margin-top: 20px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+  
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: skyblue;
+    background-image: -webkit-linear-gradient(45deg,rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
